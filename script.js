@@ -75,3 +75,60 @@ function sum(n) {
 }
 
 sum(19);
+
+// More examples - while, do...while, for, Nested loops
+
+// using a whie loop to continuously monitor the status of a background task and check if it is complete.
+let taskComplete = false;
+
+function checkTaskStatus() {
+  // Simulate checking task status
+  const status = Math.random() < 0.2;
+  console.log(status ? "Task complete." : "Task still running.");
+  return status;
+}
+
+while (!taskComplete) {
+  taskComplete = checkTaskStatus();
+}
+
+// using a do...while loop to attempt reconnection to a WebSocket server until a successful connection is established.
+let isConnected = false;
+let attempts = 0;
+const maxAttempts = 5;
+
+do {
+  console.log(`Attempt ${attempts + 1} to connect to WebSocket server...`);
+  isConnected = connectToWebSocket();
+  attempts++;
+} while (!isConnected && attempts < maxAttempts);
+
+function connectToWebSocket() {
+  // Simulate connection attempt
+  const success = Math.random() < 0.2;
+  console.log(success ? "Connected!" : "Failed to connect.");
+  return success;
+}
+
+// iterate through a product list
+const products = [
+  { name: "Shirt", price: 25.99 },
+  { name: "Hat", price: 19.5 },
+  { name: "Jeans", price: 59.95 },
+];
+
+for (const product of products) {
+  console.log(`${product.name}: $${product.price.toFixed(2)}`);
+}
+
+// create a multiplication table
+
+function createMultiplicationTable() {
+  for (let i = 1; i < 13; i++) {
+    for (let j = 1; j < 13; j++) {
+      console.log(`${j} x ${i} = ${i * j}`);
+    }
+  }
+}
+
+createMultiplicationTable();
