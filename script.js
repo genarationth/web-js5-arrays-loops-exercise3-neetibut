@@ -76,6 +76,7 @@ function sum(n) {
 
 sum(19);
 
+// --------------------------------------------------------------------------------------------------------------------
 // More examples - while, do...while, for, Nested loops
 
 // using a whie loop to continuously monitor the status of a background task and check if it is complete.
